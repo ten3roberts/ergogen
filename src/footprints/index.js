@@ -21,4 +21,5 @@ module.exports = {
   promicro_pretty: require('./promicro_pretty'),
   bat: require('./bat'),
   b3u1000p: require('./b3u1000p'),
+  pcm12: require('./pcm12.js'),
 }

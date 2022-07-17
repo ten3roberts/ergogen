@@ -1,0 +1,6 @@
+{
+  "generate-obsidian": {
+    "cmd": "node ./src/cli.js ./boards/obsidian/keys.yml",
+    "interactive": true
+  }
+}

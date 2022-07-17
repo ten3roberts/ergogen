@@ -1,0 +1,46 @@
+{
+  "units": {
+    "s": "0.5cy + 1"
+  },
+  "points": {
+    "key": {
+      "padding": "cy",
+      "footprints": {
+        "switch": {
+          "type": "choc",
+          "nets": {
+            "from": "=name",
+            "to": "GND",
+          }
+        }
+      }
+    },
+    "zones": {
+      "matrix": {
+        "columns": {
+          "pinky": {
+            "key": {}
+          },
+          "ring": {},
+          "middle": {},
+          "index": {},
+          "inner": {}
+        }
+      },
+      "thumb": {
+        "anchor": {
+          "ref": "matrix_inner_bottom",
+          "shift": [
+            -18,
+            -18
+          ]
+        },
+        "columns": {
+          "near": {},
+          "middle": {},
+          "far": {}
+        }
+      }
+    }
+  }
+}

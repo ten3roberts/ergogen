@@ -1,0 +1,125 @@
+units:
+  s: 0.5cy + 1
+points:
+  key:
+    padding: cy
+    footprints:
+      switch:
+        type: choc
+        nets:
+          from: =name
+          to: GND
+        params:
+          hotswap: true
+          reverse: true
+  zones:
+    matrix:
+      columns:
+        pinky:
+        ring:
+          rotate: -5
+          spread: cx
+          stagger: 2
+        middle: 
+          rotate: -2
+          spread: cx
+          stagger: 5
+        index:
+          rotate: -2
+          spread: cx
+          stagger: -2
+        inner:
+          spread: cx
+          stagger: -2
+          rotate: -2
+      rows:
+        bottom:
+        home:
+        top:
+    thumb:
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [ -18, -18 ]
+      columns:
+        outer:
+          rotate: -10
+          origin: [-9, -9 ]
+        middle:
+          rotate: -10
+          origin: [-9, -9]
+        inner:         
+          rotate: -10
+          origin: [-9, -9]
+      rows:
+        main:
+
+outlines:
+  exports:
+    plate:
+      - type: "polygon"
+        points:
+          - ref: "matrix_pinky_top"
+            shift: [ -s, s ]
+          - ref: "matrix_pinky_bottom"
+            shift: [ -s, -s ]
+          - ref: "thumb_outer_main"
+            shift: [ -s, -8 ]
+          - ref: "thumb_inner_main"
+            shift: [ 1.1s, -s ]
+          - ref: "thumb_inner_main"
+            shift: [ 1.1s, s ]
+          - ref: "matrix_inner_top"
+            shift: [ 3.2s, s ]
+          - ref: "matrix_middle_top"
+            shift: [ s, s ]
+          - ref: matrix_middle_top
+            shift: [ -s, s ]
+            # - type: "keys"
+            #   side: "left"
+            #   size: 16
+            #   operation: "stack"
+    fillet:
+      - type: "outline"
+        name: "plate"
+        fillet: 2
+
+pcbs.main:
+  outlines.board:
+    outline: fillet
+  footprints:
+    mcu:
+      type: promicro_pretty
+      anchor:
+        ref: matrix_inner_top
+        shift: [ u, -.5u ]
+        rotate: -90
+    power_switch:
+      type: pcm12
+      anchor:
+        ref: thumb_middle_main
+        shift: [-28, -13.5]
+        rotate: -110
+      nets:
+        from: pos  
+        to: RAW
+      params:
+        reverse: true
+    reset_switch:
+      type: b3u1000p
+      nets:
+        r1: RST  
+        r2: GND
+      anchor:
+        ref: thumb_middle_main
+        shift: [-14, 23]
+        rotate: -110
+      params:
+        reverse: true 
+    battery:
+      type: bat
+      nets: 
+        neg: GND
+      anchor:
+        ref: thumb_middle_main
+        shift: [12.5, 57]
+        rotate: -20
