@@ -5,7 +5,7 @@ points:
       switch:
         type: choc
         nets:
-          from: =name
+          from: =column_net
           to: GND
         params:
           hotswap: true
@@ -14,22 +14,42 @@ points:
     matrix:
       columns:
         pinky:
+          rows:
+            bottom.column_net: P15 }
+            home.column_net: P9 }
+            top.column_net: P1 }
         ring:
           rotate: -5
           spread: cx
           stagger: 2
+          rows:
+            bottom.column_net: P18 }
+            home.column_net: P8
+            top.column_net: P0
         middle: 
           rotate: -2
           spread: cx
           stagger: 5
+          rows:
+            bottom.column_net: P19
+            home.column_net: P7
+            top.column_net: P2
         index:
           rotate: -2
           spread: cx
           stagger: -2
+          rows:
+            bottom.column_net: P20
+            home.column_net: P6
+            top.column_net: P3
         inner:
           spread: cx
           stagger: -2
           rotate: -2
+          rows:
+            bottom.column_net: P21
+            home.column_net: P5
+            top.column_net: P4
       rows:
         bottom:
         home:
@@ -42,12 +62,16 @@ points:
         outer:
           rotate: -10
           origin: [-9, -9 ]
+
+          rows.main.column_net: P10
         middle:
           rotate: -10
           origin: [-9, -9]
+          rows.main.column_net: P16
         inner:         
           rotate: -10
           origin: [-9, -9]
+          rows.main.column_net: P14
       rows:
         main:
 
@@ -71,7 +95,7 @@ outlines:
             shift: [ .5cx + 1, .5cy ]
             # Top right
           - ref: "matrix_inner_top"
-            shift: [ 1.5cx + 5, .5cy ]
+            shift: [ 1.5cx + 8, .5cy ]
           - ref: "matrix_middle_top"
             shift: [ .5cx, .5cy ]
           - ref: matrix_middle_top
@@ -95,14 +119,23 @@ pcbs.main:
         ref: matrix_inner_top
         shift: [ u + 1, -.6u ]
         rotate: -90
+    battery:
+      type: bat
+      nets: 
+        neg: BAT_NEG
+        pos: BAT_POS
+      anchor:
+        ref: matrix_inner_top
+        shift: [u -7, -1.6u]
+        rotate: 0
     power_switch:
       type: pcm12
       anchor:
-        ref: thumb_middle_main
-        shift: [-28, -13.5]
-        rotate: -110
+        ref: matrix_inner_top
+        shift: [2u - 5.5, -0u]
+        rotate: 90
       nets:
-        from: pos  
+        from: BAT_POS 
         to: RAW
       params:
         reverse: true
@@ -112,16 +145,7 @@ pcbs.main:
         r1: RST  
         r2: GND
       anchor:
-        ref: thumb_middle_main
-        shift: [-14, 23]
-        rotate: -110
+        ref: matrix_inner_top
+        shift: [u + 6, -1.6u]
       params:
         reverse: true 
-    battery:
-      type: bat
-      nets: 
-        neg: GND
-      anchor:
-        ref: thumb_middle_main
-        shift: [12.5, 57]
-        rotate: -20

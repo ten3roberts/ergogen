@@ -1,0 +1,143 @@
+points:
+  key:
+    padding: cy
+    footprints:
+      choc_hotswap:
+        type: choc
+        nets:
+          from: =column_net
+          to: GND
+        params:
+          keycaps: true
+          reverse: true
+          hotswap: true
+  zones:
+    matrix:
+      anchor:
+        rotate: 15
+      columns:
+        pinky:
+          rows:
+            bottom:
+              bind: [0, 0, 0, 1]
+              column_net: D4
+            home:
+              bind: [0.5, 3, 0, 1]
+              column_net: D5
+            top:
+              bind: [0, 0, 0, 1]
+              column_net: D6
+        ring:
+          rows:
+            bottom:
+              bind: [0, 0, 0, 3]
+              column_net: D7
+            home:
+              bind: [0,0,3,1]
+              column_net: D8
+            top:
+              bind: [0,3,0,1]
+              column_net: D9
+          origin: [-12, -19]
+          stagger: 8
+        middle:
+          rows:
+              bottom:
+                bind: [0, 3, 0, 3]
+                column_net: D10
+              home:
+                bind: [0,0,3,0]
+                column_net: D11
+              top:
+                column_net: D12
+                bind: [0,1,0,1]
+          stagger: 5
+        index:
+          rows:
+              bottom:
+                bind: [0, 3, 0, 0]
+                column_net: D13
+              home:
+                bind: [0,0,3,0]
+                column_net: D14
+              top:
+                bind: [0,1,3,3]
+                column_net: D15
+          stagger: -4
+        far:
+          rows:
+              bottom:
+                bind: [0, 3, 0, 0]
+                column_net: D16
+              home:
+                bind: [0,0,3,0]
+                column_net: D17
+              top:
+                bind: [0,1,3,3]
+                column_net: D18
+          stagger: -2
+      rows:
+        bottom:
+        home:
+        top:
+    thumbfan:
+      anchor:
+        ref: matrix_far_bottom
+        shift: [-8, -25]
+      columns:
+        near:
+          row_overrides:
+            bottom:
+              bind: [34,1, 0, 0]
+              column_net: D19
+        home:
+          row_overrides:
+            bottom:
+              bind: [34,1, 0, 0]
+              column_net: D20
+          spread: 21.25
+          rotate: -10
+          origin: [-11.75, -9]
+        far:
+          row_overrides:
+            bottom:
+              bind: [34,1, 0, 0]
+              column_net: D21
+          spread: 21.25
+          rotate: -10
+          origin: [-9.5, -9]
+      rows:
+        thumb:
+  rotate: -15
+outlines:
+  exports:
+    keycap_outlines:
+      - type: keys
+        side: left
+        size: [1cx - 0.5, 1cy - 0.5] # Choc keycaps are 17.5 x 16.5
+        bound: false
+    basic:
+      - type: polygon
+        points:
+          - ref: matrix_pinky_top
+            shift: [-0.6u, 0.7u]
+          - ref: matrix_middle_top
+            shift: [-0.5u, 0.6u]
+          - ref: matrix_middle_top
+            shift: [0.5u, 0.6u]
+          - ref: matrix_far_top
+            shift: [1.8u, 0.5u]
+          - ref: thumbfan_far_bottom
+            shift: [0.6u, 0.5u]
+          - shift: [-0.0u, -1.0u]
+          - ref: thumbfan_near_bottom
+            shift: [-0.5u, -0.7u]
+          - ref: matrix_pinky_bottom
+            shift: [-0.6u, -0.6u]
+    round:
+      - type: outline
+        name: basic
+        fillet: 3
+    preview:
+      - round
+      - ^keycap_outlines
