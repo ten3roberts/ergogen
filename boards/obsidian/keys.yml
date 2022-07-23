@@ -11,6 +11,16 @@ points:
           hotswap: true
           reverse: true
           keycaps: true
+
+      choc:
+        type: choc
+        anchor:
+          rotate: 180
+        nets:
+          from: =column_net
+          to: GND
+        params:
+            reverse: true
   zones:
     matrix:
       columns:
