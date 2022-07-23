@@ -21,32 +21,28 @@ points:
             top.column_net: P1
         ring:
           rotate: -10
-          spread: cx
-          stagger: 10
+          spread: u + 1
+          stagger: 7
           rows:
             bottom.column_net: P18
             home.column_net: P8
             top.column_net: P0
         middle: 
           rotate: -2
-          spread: cx
-          stagger: 7
+          stagger: 5
           rows:
             bottom.column_net: P19
             home.column_net: P7
             top.column_net: P2
         index:
-          rotate: -5
-          spread: cx
+          rotate: -2
           stagger: -5
           rows:
             bottom.column_net: P20
             home.column_net: P6
             top.column_net: P3
         inner:
-          spread: cx
           stagger: -5
-          rotate: -2
           rows:
             bottom.column_net: P21
             home.column_net: P5
@@ -83,24 +79,24 @@ outlines:
         points:
           # Top left
           - ref: "matrix_pinky_top"
-            shift: [ -.5cx - 1, .5cy ]
+            shift: [ -.5cx - 1, .5cy + 5 ]
           - ref: "matrix_pinky_bottom"
-            shift: [ -.5cx - 1, -.5cy ]
+            shift: [ -.5cx - 1, -.55cy ]
             # Left inset
           - ref: "thumb_outer_main"
-            shift: [ -.5cx, -9 ]
+            shift: [ -.5cx, -10 ]
             # Bottom right
           - ref: "thumb_inner_main"
-            shift: [ .5cx + 1, -.5cy ]
+            shift: [ .5cx + 1, -.55cy ]
           - ref: "thumb_inner_main"
             shift: [ .5cx + 1, .5cy ]
             # Top right
           - ref: "matrix_inner_top"
             shift: [ 1.5cx + 8, .5cy ]
           - ref: "matrix_middle_top"
-            shift: [ .5cx, .5cy ]
+            shift: [ .5cx + 1.5, .5cy + 1 ]
           - ref: matrix_middle_top
-            shift: [ -.5cx, .5cy ]
+            shift: [ -.5cx - 1.5, .5cy + 1 ]
             # - type: "keys"
             #   side: "left"
             #   size: 16
