@@ -1,4 +1,5 @@
 points:
+  rotate: 14
   key:
     padding: cy
     footprints:
@@ -26,37 +27,37 @@ points:
       columns:
         pinky:
           rows:
-            bottom.column_net: P15
+            bottom.column_net: P18
             home.column_net: P9
-            top.column_net: P1
+            top.column_net: P4
         ring:
           rotate: -10
           spread: u + 1
           stagger: 7
           rows:
-            bottom.column_net: P18
+            bottom.column_net: P15
             home.column_net: P8
-            top.column_net: P0
+            top.column_net: P3
         middle: 
           rotate: -2
           stagger: 5
           rows:
-            bottom.column_net: P19
+            bottom.column_net: P14
             home.column_net: P7
             top.column_net: P2
         index:
           rotate: -2
           stagger: -5
           rows:
-            bottom.column_net: P20
+            bottom.column_net: P16
             home.column_net: P6
-            top.column_net: P3
+            top.column_net: P1
         inner:
           stagger: -5
           rows:
-            bottom.column_net: P21
+            bottom.column_net: P10
             home.column_net: P5
-            top.column_net: P4
+            top.column_net: P0
       rows:
         bottom:
         home:
@@ -70,15 +71,15 @@ points:
           rotate: -5
           origin: [-9, -9 ]
 
-          rows.main.column_net: P10
+          rows.main.column_net: P19
         middle:
           rotate: -10
           origin: [-9, -9]
-          rows.main.column_net: P16
+          rows.main.column_net: P20
         inner:         
           rotate: -10
           origin: [-9, -9]
-          rows.main.column_net: P14
+          rows.main.column_net: P21
       rows:
         main:
 
