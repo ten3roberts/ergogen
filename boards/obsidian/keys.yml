@@ -10,41 +10,42 @@ points:
         params:
           hotswap: true
           reverse: true
+          keycaps: true
   zones:
     matrix:
       columns:
         pinky:
           rows:
-            bottom.column_net: P15 }
-            home.column_net: P9 }
-            top.column_net: P1 }
+            bottom.column_net: P15
+            home.column_net: P9
+            top.column_net: P1
         ring:
-          rotate: -5
+          rotate: -10
           spread: cx
-          stagger: 2
+          stagger: 10
           rows:
-            bottom.column_net: P18 }
+            bottom.column_net: P18
             home.column_net: P8
             top.column_net: P0
         middle: 
           rotate: -2
           spread: cx
-          stagger: 5
+          stagger: 7
           rows:
             bottom.column_net: P19
             home.column_net: P7
             top.column_net: P2
         index:
-          rotate: -2
+          rotate: -5
           spread: cx
-          stagger: -2
+          stagger: -5
           rows:
             bottom.column_net: P20
             home.column_net: P6
             top.column_net: P3
         inner:
           spread: cx
-          stagger: -2
+          stagger: -5
           rotate: -2
           rows:
             bottom.column_net: P21
@@ -60,7 +61,7 @@ points:
         shift: [ -18, -18 ]
       columns:
         outer:
-          rotate: -10
+          rotate: -5
           origin: [-9, -9 ]
 
           rows.main.column_net: P10
@@ -87,7 +88,7 @@ outlines:
             shift: [ -.5cx - 1, -.5cy ]
             # Left inset
           - ref: "thumb_outer_main"
-            shift: [ -.5cx, -8 ]
+            shift: [ -.5cx, -9 ]
             # Bottom right
           - ref: "thumb_inner_main"
             shift: [ .5cx + 1, -.5cy ]
@@ -122,8 +123,7 @@ pcbs.main:
     battery:
       type: bat
       nets: 
-        neg: BAT_NEG
-        pos: BAT_POS
+        neg: GND
       anchor:
         ref: matrix_inner_top
         shift: [u -7, -1.6u]
@@ -135,7 +135,7 @@ pcbs.main:
         shift: [2u - 5.5, -0u]
         rotate: 90
       nets:
-        from: BAT_POS 
+        from: pos 
         to: RAW
       params:
         reverse: true
