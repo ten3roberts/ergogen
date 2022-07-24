@@ -98,12 +98,12 @@ outlines:
             shift: [ -.5cx, -10 ]
             # Bottom right
           - ref: "thumb_inner_main"
-            shift: [ .5cx + 1, -.55cy ]
+            shift: [ .5cx + 1.5, -.55cy ]
           - ref: "thumb_inner_main"
-            shift: [ .5cx + 1, .5cy ]
+            shift: [ .5cx + 1.5, .5cy ]
             # Top right
           - ref: "matrix_inner_top"
-            shift: [ 1.5cx + 8, .5cy ]
+            shift: [ 1.5cx + 8, .5cy - 2 ]
           - ref: "matrix_middle_top"
             shift: [ .5cx + 1.5, .5cy + 1 ]
           - ref: matrix_middle_top
@@ -139,7 +139,7 @@ pcbs.main:
       type: pcm12
       anchor:
         ref: matrix_inner_top
-        shift: [2u - 5.5, -0u]
+        shift: [2u - 5.5, -2]
         rotate: 90
       nets:
         from: pos 
